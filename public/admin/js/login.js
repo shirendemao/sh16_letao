@@ -55,9 +55,6 @@ $(function(){
 
     //阻止浏览器的默认行为
     e.preventDefault();
-
-    
-    console.log("呵呵");
     //发送ajax请求，登录
     $.ajax({
       type:"post",
