@@ -5,6 +5,9 @@ $(function(){
   //2. 密码不能为空
   //3. 密码长度是6-12
   var $form = $("form");
+  //在调用了bootstrapValidator方法初始化了表单校验之后，
+  //可以通过$form.data('bootstrapValidate')可以得到一个插件对象，
+  //通过对象可以调用插件给我们提供的方法
   $form.bootstrapValidator({
     //配置校验的小图标
     feedbackIcons: {
@@ -22,6 +25,9 @@ $(function(){
           //非空校验
           notEmpty: {
             message: "用户名不能为空"
+          },
+          callback: {
+            message:"用户名不存在"
           }
         }
       },
@@ -34,6 +40,9 @@ $(function(){
             min:6,
             max:12,
             message:"密码长度在6-12位"
+          },
+          callback: {
+            message: "密码错误"
           }
         }
       }
@@ -62,10 +71,15 @@ $(function(){
         }
 
         if(data.error == 1000){
-          alert("用户名不存在");
+          //alert("用户名不存在");
+          //把用户名的校验失败
+          //第一个参数：想要修改的字段
+          //第二个参数：改成什么状态  INVALID  VALID
+          //第三个参数： 指定显示的错误信息
+          $form.data("bootstrapValidator").updateStatus("username", "INVALID", "callback");
         }
         if(data.error == 1001){
-          alert("密码错误");
+          $form.data("bootstrapValidator").updateStatus("password", "INVALID", "callback");
         }
 
       }
@@ -74,4 +88,10 @@ $(function(){
 
   });
 
+
+  //重置样式
+  $("[type='reset']").on("click", function(){
+    //需要重置表单的样式,需要获取到插件对象
+    $form.data("bootstrapValidator").resetForm();
+  });
 });
