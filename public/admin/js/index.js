@@ -1,5 +1,7 @@
 $(function () {
 
+
+  //接口： 获取注册人数的接口，2017，返回一年注册的人数,[1000, 2000, 3000, 2500, 1888, 2322]
   var myChart = echarts.init(document.querySelector(".chart_left"));
   // 指定图表的配置项和数据
   var option = {

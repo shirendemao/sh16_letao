@@ -20,12 +20,13 @@ $(function(){
     //配置校验规则,需要校验的字段,对应表单中的name属性
     fields: {
       username:{
-        //配置username所有的校验规则
+        //配置username所有的校验规则，必须是bootstrapValidator认识的校验规则
         validators: {
           //非空校验
           notEmpty: {
             message: "用户名不能为空"
           },
+          // 也是一种校验规则
           callback: {
             message:"用户名不存在"
           }

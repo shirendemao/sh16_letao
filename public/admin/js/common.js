@@ -15,6 +15,23 @@ $(document).ajaxStop(function () {
   }, 500);
 });
 
+//非登陆页，发送一个ajax请求，询问是否登录，如果没有登录，跳转到登录页面
+if(location.href.indexOf("login.html") == -1){
+  //等于-1 说明地址中不包含login.html，这个时候需要发送ajax请求
+  $.ajax({
+    type:"get",
+    url:"/employee/checkRootLogin",
+    success:function(data) {
+      if(data.error === 400){
+        location.href = "login.html";
+      }
+    }
+  });
+}
+
+
+
+
 
 //二级菜单显示与隐藏效果
 $(".child").prev().on("click", function () {

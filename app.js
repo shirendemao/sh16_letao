@@ -22,6 +22,9 @@ app.use(session({
     saveUninitialized: true
 }));
 
+//如果没有登录，重定向到admin/login.html
+//后端对未登录用户的拦截，前后端分离的网站，
+//后端并不知道前端的登录页的具体的路径是什么？
 app.use(function (req, res, next) {
     var url = req.originalUrl;
     if (!req.session.employee
