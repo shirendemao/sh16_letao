@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+.category_left {
+  width: 90px;
+  height: 100%;
+  float: left;
+  position: relative;
+  /*background-color: green;*/
+}
+
+.category_left a {
+  display: block;
+  width: 90px;
+  height: 50px;
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+  text-align: center;
+  line-height: 50px;
+  background-color: pink;
+}
+
+.category_left li.now a {
+  background-color: #fff;
+  border-right: none;
+}
+
+/*
+  overflow:hidden 触发了bfc模式  overflow:hidden  定位  浮动
+  块级格式上下文
+  一句话：内部盒子无论怎么玩，都不会影响外部的盒子，
+  为什么能清除浮动？
+*/
+.category_right {
+  /*background-color: red;*/
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.category_right li {
+  float: left;
+  width: 33.33%;
+  text-align: center;
+}
+
+.category_right li img {
+  display: block;
+  width: 62px;
+  height: 62px;
+  margin: 0 auto;
+}
+
+.tips {
+  padding: 10px;
+  color: #333;
+}
