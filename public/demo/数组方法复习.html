@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+  //splice:最牛逼的方法
+  //slice(begin, end)  从begin开始，到end结束，不包含end，截取数组的一部分，放到一个新数组中返回，原数组不变。
+
+  //push unshift  pop shift
+
+  //splice: 拼接
+  // 可以在任意位置增加元素或者删除元素。获取替换元素
+
+
+  var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+
+  //第一个参数：start:起始位置
+  //第二个参数：删除的个数
+  //第三个参数：替换的元素
+  //myFish.splice(2,1);
+
+  //console.log(myFish);
+
+  myFish.splice(2, 0, "刘备")
+  console.log(myFish);
+
+</script>
+
+</body>
+</html>

@@ -2,7 +2,7 @@ $(function () {
 
   //需要发送ajax请求，获取用户的数据
   var currentPage = 1; //记录当前页码
-  var pageSize = 5; //记录每页的数量
+  var pageSize = 10; //记录每页的数量
 
   function render() {
     $.ajax({

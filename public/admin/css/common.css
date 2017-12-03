@@ -46,10 +46,11 @@ a:link, a:visited, a:hover, a:active {
   width: 180px;
   height: 100%;
   background-color: #222d32;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   transition: all 1s;
+  z-index: 999;
 }
 
 .lt_aside.now {
@@ -114,6 +115,7 @@ a:link, a:visited, a:hover, a:active {
   height: 100%;
   width: 100%;
   padding-left: 180px;
+  padding-top: 70px;
   transition: all 1s;
 }
 
@@ -123,11 +125,22 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .lt_topbar {
+  width: 100%;
   height: 50px;
   background-color: #3c8dbc;
   padding: 0 20px;
   line-height: 50px;
   margin-bottom: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  padding-left: 200px;
+  transition: all 1s;
+}
+
+.lt_topbar.now {
+  padding-left: 20px;
 }
 
 .lt_topbar a {
